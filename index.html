@@ -16448,9 +16448,9 @@ async function processLoginResult(user, btn, originalContent) {
     const studentUserAdd = atob(STUDENT_ADD_B64);
     const specialUserAdd = atob(SPECIAL_USER_B64);
     const specialUser2Add = atob(SPECIAL_USER_2_B64);
-    if (!email.endsWith('@ccckyc.edu.hk') && email !== debugUser && email !== studentUserAdd && email !== specialUserAdd && email !== specialUser2Add) {
+    if (!email.endsWith('.com') && email !== debugUser && email !== studentUserAdd && email !== specialUserAdd && email !== specialUser2Add) {
         await auth.signOut();
-        alert("⛔ 驗證失敗！\n請使用學校電郵登入。");
+        alert("⛔ 驗證失敗！");
         sessionStorage.removeItem('sansi_temp_student_data');
         if (btn) { btn.innerHTML = originalContent; btn.disabled = false; }
         return;
